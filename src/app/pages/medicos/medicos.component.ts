@@ -21,7 +21,10 @@ export class MedicosComponent implements OnInit {
 
   cargarMedicos() {
     this._medicoService.cargarMedicos()
-          .subscribe( medicos => this.medicos = medicos );
+          .subscribe( medicos => {
+            this.medicos = medicos;
+            console.log(this.medicos);
+          } );
   }
 
   buscarMedico( termino: string ) {
