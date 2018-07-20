@@ -23,7 +23,6 @@ export class MedicosComponent implements OnInit {
     this._medicoService.cargarMedicos()
           .subscribe( medicos => {
             this.medicos = medicos;
-            console.log(this.medicos);
           } );
   }
 
@@ -35,13 +34,13 @@ export class MedicosComponent implements OnInit {
     }
 
     this._medicoService.buscarMedicos( termino )
-            .subscribe( medicos =>  this.medicos = medicos );
+      .subscribe( medicos =>  this.medicos = medicos );
   }
 
   borrarMedico( medico: Medico ) {
 
     this._medicoService.borrarMedico( medico._id )
-            .subscribe( () =>  this.cargarMedicos() );
+      .subscribe( () =>  this.cargarMedicos() );
 
   }
 
